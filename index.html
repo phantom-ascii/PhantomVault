@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Phantom Vault</title>
     <link rel="stylesheet" href="styles.css" />
-  </head>  
+  </head>
   <body>
     <div class="page">
       <main id="unlock-screen">
@@ -15,9 +15,35 @@
           Phantom Vault is a secure and private storage solution for your
           sensitive data.
         </p>
-        <input type="password" placeholder="Enter your Passkey" />
-        <button>Access Vault</button>
+        <input id="passkey" placeholder="Enter your Passkey" />
+        <button id="access-button">Access Vault</button>
       </main>
+
+      <section id="vault-screen">
+        <header class="vault-header">
+          <h1>Your Vault</h1>
+          <button id="lock-button">Lock Vault</button>
+        </header>
+
+        <p class="vault-subtitle">Your Private Files, Stored Securely</p>
+
+        <main class="vault-content">
+          <div class="file-area">
+            <h3>Files</h3>
+
+            <div class="empty-vault">
+              <span>🔐</span>
+              <p>Your vault is empty.</p>
+
+              <button id="upload-button">Upload File</button>
+
+              <input id="file-input" type="file" hidden />
+            </div>
+
+            <div id="file-list"></div>
+          </div>
+        </main>
+      </section>
     </div>
 
     <script src="script.js"></script>

@@ -1,17 +1,30 @@
 body {
-  background-color: #131212;
+  margin: 0;
+  background-color: #030303;
 }
 
 #unlock-screen {
-  width: 400px;
-  height: 500px;
+  width: 600px;
+  height: 800px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   border: 2px solid #0a0a0a;
   background-color: #0f0f0f;
+
   gap: 30px;
+
+  transition: transform 0.15s ease-out;
+}
+
+#unlock-screen.unlocked {
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .page {
@@ -30,7 +43,7 @@ h1 {
 }
 
 .lock-icon {
-    font-size: 48px;
+  font-size: 48px;
 }
 
 p {
@@ -71,4 +84,116 @@ button:hover {
   box-shadow: 0 0 10px #41033b;
   transform: scale(1.05);
   background-color: #1d0c22;
+}
+
+#vault-screen {
+  width: 900px;
+  min-height: 600px;
+
+  padding: 40px;
+
+  box-sizing: border-box;
+
+  background-color: #0f0f0f;
+  border: 2px solid #1a1a1a;
+  border-radius: 16px;
+
+  color: white;
+
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+
+  transition: opacity 0.5s ease;
+}
+
+#vault-screen.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.vault-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #252525;
+  padding-bottom: 20px;
+}
+
+.vault-header h2 {
+  margin: 0;
+  font-size: 32px;
+  color: #ffffff;
+}
+
+#lock-button {
+  background-color: #1a1a1a;
+  border: 1px solid #640083;
+}
+
+.vault-subtitle {
+  margin-top: 20px;
+  color: #747474;
+}
+
+.vault-content {
+  margin-top: 40px;
+}
+
+.file-area h3 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.empty-vault {
+  min-height: 300px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px dashed #292929;
+  border-radius: 14px;
+
+  background-color: #0a0a0a;
+}
+
+.empty-vault span {
+  font-size: 48px;
+}
+
+.empty-vault p {
+  color: #747474;
+}
+
+#upload-button {
+  margin-top: 10px;
+}
+
+#file-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.file-time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 15px 20px;
+
+  background-color: #0a0a0a;
+  border: 1px solid #202020;
+  border-radius: 10px;
+
+  color: white;
+}
+
+.file-item span:last-child {
+  font-size: 14px;
+  color: #747474;
 }
