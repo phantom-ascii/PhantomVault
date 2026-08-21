@@ -1,199 +1,527 @@
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
 body {
+
   margin: 0;
-  background-color: #030303;
+
+  min-height: 100vh;
+
+  background: #030303;
+
+  color: white;
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
 }
 
-#unlock-screen {
-  width: 600px;
-  height: 800px;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  border: 2px solid #0a0a0a;
-  background-color: #0f0f0f;
-
-  gap: 30px;
-
-  transition: transform 0.15s ease-out;
-}
-
-#unlock-screen.unlocked {
-  opacity: 0;
-  transform: scale(0.95);
-  pointer-events: none;
-  transition: opacity 0.4s ease, transform 0.4s ease;
-}
+/* =========================
+   PAGE
+========================= */
 
 .page {
+
+  width: 100%;
+
+  min-height: 100vh;
+
   display: flex;
-  flex-direction: column;
+
   align-items: center;
+
   justify-content: center;
-  height: 100vh;
+
+  padding: 30px;
 }
 
-h1 {
-  font-size: 48px;
-  margin-bottom: 20px;
-  color: #640083;
-  font-family: "Monobrains", monospace;
-}
 
-.lock-icon {
-  font-size: 48px;
-}
+/* =========================
+   UNLOCK SCREEN
+========================= */
 
-p {
-  font-size: 18px;
-  text-align: center;
-  max-width: 400px;
-  color: #747474;
-}
+#unlock-screen {
 
-input[type="password"] {
-  padding: 10px;
-  font-size: 16px;
-  border: 2px solid #640083;
-  border-radius: 10px;
-  width: 250px;
-  background-color: #050505;
-  color: #ffffff;
-  text-align: center;
-}
+  width: min(600px, 90vw);
 
-input[type="password"]:focus {
-  outline: none;
-  box-shadow: 0 0 10px #41033b;
-}
+  min-height: 650px;
 
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 10px;
-  background-color: #640083;
-  color: #ffffff;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
+  display: flex;
 
-button:hover {
-  box-shadow: 0 0 10px #41033b;
-  transform: scale(1.05);
-  background-color: #1d0c22;
-}
+  flex-direction: column;
 
-#vault-screen {
-  width: 900px;
-  min-height: 600px;
+  align-items: center;
+
+  justify-content: center;
 
   padding: 40px;
 
-  box-sizing: border-box;
+  border: 1px solid #1c1c1c;
 
-  background-color: #0f0f0f;
-  border: 2px solid #1a1a1a;
-  border-radius: 16px;
+  border-radius: 20px;
 
-  color: white;
+  background: #0f0f0f;
 
-  opacity: 0;
-  pointer-events: none;
-  position: absolute;
+  gap: 25px;
 
-  transition: opacity 0.5s ease;
+  transition:
+    transform 0.15s ease-out,
+    opacity 0.3s ease;
+
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.5);
 }
 
-#vault-screen.active {
-  opacity: 1;
-  pointer-events: auto;
-}
 
-.vault-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+/* =========================
+   TITLE
+========================= */
 
-  border-bottom: 1px solid #252525;
-  padding-bottom: 20px;
-}
+h1 {
 
-.vault-header h2 {
   margin: 0;
-  font-size: 32px;
-  color: #ffffff;
-}
 
-#lock-button {
-  background-color: #1a1a1a;
-  border: 1px solid #640083;
-}
-
-.vault-subtitle {
-  margin-top: 20px;
-  color: #747474;
-}
-
-.vault-content {
-  margin-top: 40px;
-}
-
-.file-area h3 {
-  font-size: 22px;
-  margin-bottom: 20px;
-}
-
-.empty-vault {
-  min-height: 300px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  border: 2px dashed #292929;
-  border-radius: 14px;
-
-  background-color: #0a0a0a;
-}
-
-.empty-vault span {
   font-size: 48px;
+
+  color: #640083;
+
+  font-family:
+    "Monobrains",
+    monospace;
+
+  text-align: center;
 }
 
-.empty-vault p {
+
+.lock-icon {
+
+  font-size: 52px;
+
+  filter:
+    drop-shadow(
+      0 0 15px #640083
+    );
+}
+
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+#unlock-screen p {
+
+  max-width: 420px;
+
+  margin: 0;
+
   color: #747474;
+
+  font-size: 17px;
+
+  line-height: 1.6;
+
+  text-align: center;
 }
 
-#upload-button {
-  margin-top: 10px;
-}
 
-#file-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 20px;
-}
+/* =========================
+   PASSWORD
+========================= */
 
-.file-time {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+input[type="password"] {
 
-  padding: 15px 20px;
+  width: min(300px, 80vw);
 
-  background-color: #0a0a0a;
-  border: 1px solid #202020;
+  padding: 14px 18px;
+
+  border: 2px solid #640083;
+
   border-radius: 10px;
 
+  background: #050505;
+
   color: white;
+
+  font-size: 16px;
+
+  text-align: center;
+
+  transition:
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
 }
 
-.file-item span:last-child {
+
+input[type="password"]:focus {
+
+  outline: none;
+
+  border-color: #8d00b8;
+
+  box-shadow:
+    0 0 15px #41033b;
+}
+
+
+input[type="password"]::placeholder {
+
+  color: #555;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+
+  border: none;
+
+  border-radius: 10px;
+
+  padding: 12px 22px;
+
+  background: #640083;
+
+  color: white;
+
+  font-size: 15px;
+
+  cursor: pointer;
+
+  transition:
+    0.2s ease;
+}
+
+
+button:hover {
+
+  background: #1d0c22;
+
+  box-shadow:
+    0 0 15px #41033b;
+
+  transform: scale(1.04);
+}
+
+
+button:disabled {
+
+  opacity: 0.5;
+
+  cursor: not-allowed;
+
+  transform: none;
+
+  box-shadow: none;
+}
+
+
+/* =========================
+   FORGOT PASSWORD
+========================= */
+
+#forgot-password {
+
+  padding: 5px;
+
+  background: transparent;
+
+  color: #666;
+
   font-size: 14px;
-  color: #747474;
+}
+
+
+#forgot-password:hover {
+
+  background: transparent;
+
+  color: white;
+
+  box-shadow: none;
+
+  transform: none;
+
+  text-decoration: underline;
+}
+
+
+/* =========================
+   VAULT SCREEN
+========================= */
+
+#vault-screen {
+
+  display: none;
+
+  width: min(900px, 94vw);
+
+  min-height: 600px;
+
+  padding: 30px;
+
+  border: 1px solid #1c1c1c;
+
+  border-radius: 20px;
+
+  background: #0f0f0f;
+
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.5);
+}
+
+
+#vault-screen.active {
+
+  display: block;
+}
+
+
+/* =========================
+   VAULT HEADER
+========================= */
+
+.vault-header {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding-bottom: 25px;
+
+  border-bottom: 1px solid #202020;
+}
+
+
+.vault-header h2 {
+
+  margin: 0;
+
+  font-size: 30px;
+}
+
+
+.vault-subtitle {
+
+  margin: 7px 0 0;
+
+  color: #666;
+
+  font-size: 14px;
+}
+
+
+/* =========================
+   VAULT CONTENT
+========================= */
+
+.vault-content {
+
+  padding-top: 25px;
+}
+
+
+.upload-button {
+
+  margin-bottom: 25px;
+}
+
+
+/* =========================
+   FILE LIST
+========================= */
+
+#file-list {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+
+.file-item {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding: 15px 18px;
+
+  border: 1px solid #202020;
+
+  border-radius: 12px;
+
+  background: #090909;
+
+  transition:
+    border-color 0.2s ease;
+}
+
+
+.file-item:hover {
+
+  border-color: #640083;
+}
+
+
+.file-name {
+
+  min-width: 0;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+
+  color: #ddd;
+}
+
+
+.file-actions {
+
+  display: flex;
+
+  gap: 8px;
+
+  flex-shrink: 0;
+}
+
+
+.file-actions button {
+
+  padding: 8px 14px;
+
+  font-size: 13px;
+}
+
+
+.delete-file {
+
+  background: #35101a;
+}
+
+
+.delete-file:hover {
+
+  background: #5c1525;
+
+  box-shadow:
+    0 0 12px rgba(150, 20, 50, 0.4);
+}
+
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.empty-vault {
+
+  min-height: 350px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+
+.empty-icon {
+
+  font-size: 50px;
+
+  margin-bottom: 15px;
+}
+
+
+.empty-vault h3 {
+
+  margin: 0 0 10px;
+
+  font-size: 22px;
+}
+
+
+.empty-vault p {
+
+  max-width: 400px;
+
+  margin: 0 0 20px;
+
+  color: #666;
+
+  line-height: 1.5;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+
+  #unlock-screen {
+
+    min-height: 600px;
+
+    padding: 25px;
+  }
+
+
+  h1 {
+
+    font-size: 38px;
+  }
+
+
+  .vault-header {
+
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+
+  .file-item {
+
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+
+  .file-actions {
+
+    width: 100%;
+  }
+
+
+  .file-actions button {
+
+    flex: 1;
+  }
+
 }
