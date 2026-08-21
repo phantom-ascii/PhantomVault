@@ -1,0 +1,74 @@
+body {
+  background-color: #131212;
+}
+
+#unlock-screen {
+  width: 400px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #0a0a0a;
+  background-color: #0f0f0f;
+  gap: 30px;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #640083;
+  font-family: "Monobrains", monospace;
+}
+
+.lock-icon {
+    font-size: 48px;
+}
+
+p {
+  font-size: 18px;
+  text-align: center;
+  max-width: 400px;
+  color: #747474;
+}
+
+input[type="password"] {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #640083;
+  border-radius: 10px;
+  width: 250px;
+  background-color: #050505;
+  color: #ffffff;
+  text-align: center;
+}
+
+input[type="password"]:focus {
+  outline: none;
+  box-shadow: 0 0 10px #41033b;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  background-color: #640083;
+  color: #ffffff;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  box-shadow: 0 0 10px #41033b;
+  transform: scale(1.05);
+  background-color: #1d0c22;
+}
