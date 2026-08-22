@@ -1,122 +1,90 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Phantom Vault</title>
+    <title>Phantom Vault</title>
 
-  <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+    <div class="page">
 
-  <div class="page">
+        <main id="unlock-screen">
+            <h1>Phantom Vault</h1>
 
-    <!-- =========================
-         UNLOCK SCREEN
-    ========================== -->
+            <span class="lock-icon">🔒</span>
 
-    <main id="unlock-screen">
+            <p>
+                Phantom Vault is a secure and private storage
+                solution for your sensitive data.
+            </p>
 
-      <h1>Phantom Vault</h1>
+            <input
+                id="passkey"
+                type="password"
+                placeholder="Enter your Passkey"
+                autocomplete="current-password"
+            >
 
-      <span class="lock-icon">🔒</span>
+            <button id="access-button">
+                Access Vault
+            </button>
 
-      <p>
-        Phantom Vault is a secure and private storage
-        solution for your sensitive data.
-      </p>
+            <button id="forgot-password">
+                Forgot passkey?
+            </button>
+        </main>
 
-      <input
-        id="passkey"
-        type="password"
-        placeholder="Enter your Passkey"
-        autocomplete="current-password"
-      />
+        <main id="vault-screen">
+            <header class="vault-header">
+                <div>
+                    <h2>Your Vault</h2>
+                    <p class="vault-subtitle">
+                        Your files are encrypted locally.
+                    </p>
+                </div>
 
-      <button id="access-button">
-        Access Vault
-      </button>
+                <button id="lock-button">
+                    Lock
+                </button>
+            </header>
 
-      <button id="forgot-password">
-        Forgot passkey?
-      </button>
+            <section class="vault-content">
+                <button id="upload-button" class="upload-button">
+                    + Add Files
+                </button>
 
-    </main>
+                <input
+                    id="file-input"
+                    type="file"
+                    multiple
+                    hidden
+                >
 
+                <div id="file-list"></div>
 
-    <!-- =========================
-         VAULT SCREEN
-    ========================== -->
+                <div class="empty-vault">
+                    <div class="empty-icon">🔐</div>
 
-    <main id="vault-screen">
+                    <h3>Your vault is empty</h3>
 
-      <div class="vault-header">
+                    <p>
+                        Add a file to encrypt and store it
+                        securely in your browser.
+                    </p>
 
-        <div>
-          <h2>Your Vault</h2>
+                    <button id="empty-upload-button">
+                        Add your first file
+                    </button>
+                </div>
+            </section>
+        </main>
 
-          <p class="vault-subtitle">
-            Your files are encrypted locally.
-          </p>
-        </div>
+    </div>
 
-        <button id="lock-button">
-          Lock
-        </button>
-
-      </div>
-
-
-      <div class="vault-content">
-
-        <button id="upload-button" class="upload-button">
-          + Add Files
-        </button>
-
-        <input
-          id="file-input"
-          type="file"
-          multiple
-          hidden
-        />
-
-
-        <div id="file-list"></div>
-
-
-        <div class="empty-vault">
-
-          <div class="empty-icon">
-            🔐
-          </div>
-
-          <h3>Your vault is empty</h3>
-
-          <p>
-            Add a file to encrypt and store it
-            securely in your browser.
-          </p>
-
-          <button id="empty-upload-button">
-            Add your first file
-          </button>
-
-        </div>
-
-      </div>
-
-    </main>
-
-  </div>
-
-  <script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
-
 </html>
