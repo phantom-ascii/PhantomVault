@@ -1,42 +1,10 @@
-# Phantom Vault
+# PhantomVault
 
-A small local file vault built with HTML, CSS and JavaScript.
+## The work of 3 hours by phantom-ascii (thats me btw guysss)
 
-Phantom Vault lets you store files in your browser and encrypts them before they're saved. The idea was pretty simple: I wanted to learn how browser storage and encryption actually work, so I built my own little vault instead of using another storage service.
+### Phantom Vault is a privacy first storage for your files. Everything is locally stored a encrypted so you can have the ease of mind that your files are in good handds. Phantom Vaultt is an open source project made by me (14 year old student) for the stadance program. it is built with pure html css and js. 
 
-> This is a learning project, not a replacement for a professional password manager.
+My stardance project page : https://stardance.hackclub.com/projects/52138
 
-## What it does
-
-- 🔐 Passkey protected vault
-- 🔒 AES-GCM encrypted files
-- 📁 Upload multiple files
-- 👀 Open/decrypt files from the vault
-- 🗑️ Delete files
-- 🔒 Lock the vault
-- ♻️ Reset the vault if you forget your passkey
-- 💾 Stores everything locally in the browser
-- 🖱️ Small mouse movement effect on the unlock screen
-
-## How it works
-
-Phantom Vault doesn't store your passkey directly.
-
-When you enter your passkey, it is run through PBKDF2 to derive an AES-256 encryption key.
-
-Files are then encrypted with AES-GCM before being stored in IndexedDB.
-
-The basic flow is:
-
-```text
-Passkey
-   ↓
-PBKDF2
-   ↓
-AES-256 key
-   ↓
-AES-GCM
-   ↓
-Encrypted file
-   ↓
-IndexedDB
+*If you like my project be sure to star this repo*
+*Byeeee*
